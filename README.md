@@ -131,10 +131,12 @@ users          — id, email, name, role (admin | rep | viewer)
 | F11 | One-click Claude AI: generate follow-up email from transcript | Must have |
 | F12 | One-click Claude AI: extract deal intelligence (objections, next steps, sentiment) | Must have |
 | F13 | Access control — admins can grant/revoke internal user access | Must have |
-| F14 | Rep performance dashboard — aggregate analytics over time per rep | Nice to have |
-| F15 | Email notification to rep when a coaching comment is left on their call | Nice to have |
-| F16 | Slack notification when a new call is ingested | Nice to have |
-| F17 | Custom scorecards per call type (demo, disco, renewal) | Nice to have |
+| F14 | Post a notification to the "Sales Call Recordings" Teams channel when a call is processed | Must have |
+| F15 | Teams notification includes: call title, rep name, account, duration, talk ratio, and a direct link to the call | Must have |
+| F16 | Rep is @mentioned in the Teams notification so they are alerted directly | Must have |
+| F17 | Rep performance dashboard — aggregate analytics over time per rep | Nice to have |
+| F18 | Email notification to rep when a coaching comment is left on their call | Nice to have |
+| F19 | Custom scorecards per call type (demo, disco, renewal) | Nice to have |
 
 ---
 
@@ -238,6 +240,7 @@ Uses a Connected App with OAuth 2.0 (JWT flow for server-to-server). Requires:
 - [ ] Shareable prospect links
 - [ ] Salesforce custom object `Sales_Brain_Call__c` + page layout
 - [ ] Auto-match calls to Salesforce Accounts via participant email
+- [ ] Microsoft Teams notification to "Sales Call Recordings" channel on call processed
 
 ### Phase 2 — Coaching Layer
 - [ ] Claude AI: email generation from transcript
@@ -247,7 +250,6 @@ Uses a Connected App with OAuth 2.0 (JWT flow for server-to-server). Requires:
 - [ ] Custom analytics benchmarks per call type
 
 ### Phase 3 — Polish
-- [ ] Slack notifications on new call ingested
 - [ ] Custom scorecards per call type (demo, disco, renewal)
 - [ ] Manual Salesforce account linking fallback UI
 
@@ -276,6 +278,11 @@ ANTHROPIC_API_KEY=
 
 NEXTAUTH_SECRET=
 NEXTAUTH_URL=
+
+TEAMS_WEBHOOK_URL=
+SALESFORCE_CLIENT_ID=
+SALESFORCE_CLIENT_SECRET=
+SALESFORCE_INSTANCE_URL=
 ```
 
 ## Team
