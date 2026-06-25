@@ -109,7 +109,8 @@ utterances     — id, call_id, participant_id, start_ms, end_ms, text
 call_analytics — id, call_id, talk_ratio, longest_monologue_ms, longest_customer_story_ms, interactivity_score, patience_ms
 comments       — id, call_id, user_id, timestamp_ms, body, created_at
 shares         — id, call_id, token, expires_at, password_hash
-users          — id, email, name, role (admin | rep | viewer)
+users          — id, email, name, role (admin | rep | viewer), zoom_user_id, teams_user_id
+call_views     — id, call_id, user_id, started_at, last_position_ms, duration_ms, percent_watched
 ```
 
 ## Requirements
@@ -134,9 +135,13 @@ users          — id, email, name, role (admin | rep | viewer)
 | F14 | Post a notification to the "Sales Call Recordings" Teams channel when a call is processed | Must have |
 | F15 | Teams notification includes: call title, rep name, account, duration, talk ratio, and a direct link to the call | Must have |
 | F16 | Rep is @mentioned in the Teams notification so they are alerted directly | Must have |
-| F17 | Rep performance dashboard — aggregate analytics over time per rep | Nice to have |
-| F18 | Email notification to rep when a coaching comment is left on their call | Nice to have |
-| F19 | Custom scorecards per call type (demo, disco, renewal) | Nice to have |
+| F17 | Manager Activity dashboard section: calls listened, calls with feedback, comments left — filterable by custom date range | Must have |
+| F18 | Track call view progress per user so "listened" is only counted when ≥50% of the call was watched | Must have |
+| F19 | Manager Activity broken down per rep — shows each rep's calls recorded, calls reviewed, and comments received | Must have |
+| F20 | Date range filter: Last 7 days, Last 30 days, Last Quarter, custom from/to — same UX pattern as Gong | Must have |
+| F21 | Rep performance dashboard — aggregate analytics over time per rep | Nice to have |
+| F22 | Email notification to rep when a coaching comment is left on their call | Nice to have |
+| F23 | Custom scorecards per call type (demo, disco, renewal) | Nice to have |
 
 ---
 
